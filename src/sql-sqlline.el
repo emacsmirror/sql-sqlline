@@ -23,12 +23,12 @@
   :type 'file
   :group 'sql-sqlline)
 
-(defcustom sql-sqlline-login-params '(server default-catalog default-schema)
+(defcustom sql-sqlline-login-params '()
   "Parameters needed to connect to Sqlline."
   :type 'sql-login-params
   :group 'sql-sqlline)
 
-(defcustom sql-sqlline-options '("--output-format" "CSV_HEADER")
+(defcustom sql-sqlline-options '("--silent" "true")
   "List of options for `sql-sqlline-program'."
   :type '(repeat string)
   :group 'sql-sqlline)
@@ -39,11 +39,12 @@
 PRODUCT is the sql product (sqlline). OPTIONS are any additional
 options to pass to sqlline-shell. BUFFER-NAME is what you'd like
 the SQLi buffer to be named."
-  (let ((params (append (unless (string= "" sql-server)
-                          `("--server" ,sql-server))
-                        (unless (string= "" sql-database)
-                          `("--catalog" sql-database))
-                        options)))
+  "Connect to Sqlline in a comint buffer.
+
+PRODUCT is the sql product (sqlline). OPTIONS are any additional
+options to pass to sqlline-shell. BUFFER-NAME is what you'd like
+the SQLi buffer to be named."
+  (let (params options)
     (sql-comint product params buffer-name)))
 
 ;;;###autoload
