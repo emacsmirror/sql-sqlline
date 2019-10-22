@@ -1,3 +1,5 @@
 /src/.static-analysis
 *.elc
-/artifacts/sql-presto.el~
+/artifacts/*el
+/artifacts/[RL]*
+*el~
