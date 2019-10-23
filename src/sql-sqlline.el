@@ -1,8 +1,8 @@
-;;; sql-sqlline --- Adds Sqlline support to SQLi mode. -*- lexical-binding: t -*-
+;;; sql-sqlline --- Adds SQLLine support to SQLi mode. -*- lexical-binding: t -*-
 
-;; Copyright (C) since 2018 Katherine Cox-Buday
-;; Author: Katherine Cox-Buday <cox.katherine.e@gmail.com>
-;; Version: 1.0.0
+;; Copyright (C) since 2019 Matteo Redaelli
+;; Author: Matteo Redaelli <matteo.redaelli@gmail.com>
+;; Version: 1.0.1
 ;; Keywords: sql sqlline database
 ;; Package-Requires: ((emacs "24.4"))
 
@@ -14,17 +14,17 @@
 (require 'sql)
 
 (defgroup sql-sqlline nil
-  "Use Sqlline with sql-interactive mode."
+  "Use SQLLine with sql-interactive mode."
   :group 'SQL
   :prefix "sql-sqlline-")
 
 (defcustom sql-sqlline-program "sqlline"
-  "Command to start the Sqlline command interpreter."
+  "Command to start the SQLLine command interpreter."
   :type 'file
   :group 'sql-sqlline)
 
 (defcustom sql-sqlline-login-params '()
-  "Parameters needed to connect to Sqlline."
+  "Parameters needed to connect to SQLLine."
   :type 'sql-login-params
   :group 'sql-sqlline)
 
@@ -34,28 +34,27 @@
   :group 'sql-sqlline)
 
 (defun sql-sqlline-comint (product options &optional buffer-name)
-  "Connect to Sqlline in a comint buffer.
+  "Connect to SQLLine in a comint buffer.
 
 PRODUCT is the sql product (sqlline). OPTIONS are any additional
 options to pass to sqlline-shell. BUFFER-NAME is what you'd like
 the SQLi buffer to be named."
-  "Connect to Sqlline in a comint buffer.
+  "Connect to SQLLine in a comint buffer.
 
 PRODUCT is the sql product (sqlline). OPTIONS are any additional
 options to pass to sqlline-shell. BUFFER-NAME is what you'd like
 the SQLi buffer to be named."
-  (let (params options)
-    (sql-comint product params buffer-name)))
+    (sql-comint product options buffer-name))
 
 ;;;###autoload
 (defun sql-sqlline (&optional buffer)
-  "Run Sqlline as an inferior process.
+  "Run SQLLine as an inferior process.
 
 The buffer with name BUFFER will be used or created."
   (interactive "P")
   (sql-product-interactive 'sqlline buffer))
 
-(sql-add-product 'sqlline "Sqlline"
+(sql-add-product 'sqlline "SQLLine"
                  :free-software t
                  :list-all "!tables"
                  :list-table "!describe %s;"
