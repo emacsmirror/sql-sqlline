@@ -1,11 +1,16 @@
-;;; sql-sqlline --- Adds SQLLine support to SQLi mode. -*- lexical-binding: t -*-
+;;; sql-sqlline.el --- Adds SQLLine support to SQLi mode -*- lexical-binding: t -*-
 
 ;; Copyright (C) since 2019 Matteo Redaelli
 ;; Author: Matteo Redaelli <matteo.redaelli@gmail.com>
-;; Version: 1.0.1
-;; Keywords: sql sqlline database
-;; Package-Requires: ((emacs "24.4"))
 
+;; Version: 1.0.1
+;; Keywords: languages
+;; Package-Requires: ((emacs "24.4"))
+;; Homepage: https://gitlab.com/matteo.redaelli/sql-sqlline
+
+;; This file is not part of GNU Emacs.
+
+;; This file is free software...
 
 ;;; Commentary:
 ;; $$COMMENTARY$$
@@ -59,7 +64,7 @@ The buffer with name BUFFER will be used or created."
                  :list-all "!tables"
                  :list-table "!describe %s;"
                  :prompt-regexp "^[^>]*> "
-                 :prompt-cont-regexp "^semicolon> "
+                 :prompt-cont-regexp "^(semicolon|quote|dquote)> "
                  :sqli-comint-func 'sql-sqlline-comint
                  :font-lock 'sql-mode-ansi-font-lock-keywords
                  :sqli-login sql-sqlline-login-params
