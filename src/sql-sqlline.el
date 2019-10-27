@@ -41,8 +41,8 @@
 (defun sql-sqlline-comint (product options &optional buffer-name)
   "Connect to SQLLine in a comint buffer.
 
-PRODUCT is the sql product (sqlline). OPTIONS are any additional
-options to pass to sqlline-shell. BUFFER-NAME is what you'd like
+PRODUCT is the sql product (sqlline).  OPTIONS are any additional
+options to pass to sqlline-shell.  BUFFER-NAME is what you'd like
 the SQLi buffer to be named."
   "Connect to SQLLine in a comint buffer.
 
