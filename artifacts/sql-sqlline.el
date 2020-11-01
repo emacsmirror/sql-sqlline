@@ -19,15 +19,16 @@
 ;;   to databases and present you with a prompt you are probably familiar
 ;;   with (e.g. `mysql>', `pgsql>', etc.). But it cannot connect to less
 ;;   known databases like Amazon Athena, Amazon Redshift, (Facebook)
-;;   PrestoDB,... But it can be done through SqlLine
-;;   (<https://github.com/julianhyde/sqlline>) and this mode gives you the
-;;   ability to do that for Sqlline.
+;;   PrestoDB,...
+
+;;   This mode gives you the ability to do that through SqlLine
+;;   (<https://github.com/julianhyde/sqlline>) command
 
 
 ;; * How do I get it?
 
 ;;   The canonical repository for the source code is
-;;   <https://gitlab.com/matteo.redaelli/sql-sqlline> .
+;;   <https://gitlab.com/matteoredaelli/sql-sqlline>
 
 ;;   The recommended way to install the package is to utilize Emacs's
 ;;   `package.el' along with MELPA. To set this up, please follow MELPA's
