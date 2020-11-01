@@ -3,10 +3,10 @@
 ;; Copyright (C) since 2019 Matteo Redaelli
 ;; Author: Matteo Redaelli <matteo.redaelli@gmail.com>
 
-;; Version: 1.0.1
+;; Version: 1.0.2
 ;; Keywords: languages
 ;; Package-Requires: ((emacs "24.4"))
-;; Homepage: https://gitlab.com/matteo.redaelli/sql-sqlline
+;; Homepage: https://gitlab.com/matteoredaelli/sql-sqlline
 
 ;; This file is not part of GNU Emacs.
 
@@ -60,16 +60,16 @@ The buffer with name BUFFER will be used or created."
   (sql-product-interactive 'sqlline buffer))
 
 (sql-add-product 'sqlline "SQLLine"
-                 :free-software t
-                 :list-all "!tables"
-                 :list-table "!describe %s;"
-                 :prompt-regexp "^[^>]*> "
-                 :prompt-cont-regexp "^(semicolon|quote|dquote)> "
-                 :sqli-comint-func 'sql-sqlline-comint
-                 :font-lock 'sql-mode-ansi-font-lock-keywords
-                 :sqli-login sql-sqlline-login-params
-                 :sqli-program 'sql-sqlline-program
-                 :sqli-options 'sql-sqlline-options)
+		 '(:free-software t
+		 :list-all "!tables"
+		 :list-table "!describe %s;"
+		 :prompt-regexp "^[^>]*> "
+		 :prompt-cont-regexp "^(semicolon|quote|dquote)> "
+		 :sqli-comint-func 'sql-sqlline-comint
+		 :font-lock 'sql-mode-ansi-font-lock-keywords
+		 :sqli-login sql-sqlline-login-params
+		 :sqli-program 'sql-sqlline-program
+		 :sqli-options 'sql-sqlline-options))
 
 (provide 'sql-sqlline)
 ;;; sql-sqlline.el ends here

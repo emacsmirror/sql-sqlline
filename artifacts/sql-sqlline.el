@@ -17,14 +17,17 @@
 
 ;;   Emacs comes with a SQL interpreter which is able to open a connection
 ;;   to databases and present you with a prompt you are probably familiar
-;;   with (e.g. `mysql>', `pgsql>', `sqlline>', etc.). This mode gives you
-;;   the ability to do that for Sqlline.
+;;   with (e.g. `mysql>', `pgsql>', etc.). But it cannot connect to less
+;;   known databases like Amazon Athena, Amazon Redshift, (Facebook)
+;;   PrestoDB,... But it can be done through SqlLine
+;;   (<https://github.com/julianhyde/sqlline>) and this mode gives you the
+;;   ability to do that for Sqlline.
 
 
 ;; * How do I get it?
 
 ;;   The canonical repository for the source code is
-;;   [https://gitlab.com/matteo.redaelli/sql-sqlline] .
+;;   <https://gitlab.com/matteo.redaelli/sql-sqlline> .
 
 ;;   The recommended way to install the package is to utilize Emacs's
 ;;   `package.el' along with MELPA. To set this up, please follow MELPA's
@@ -32,7 +35,7 @@
 ;;   sql-sqlline'.
 
 
-;;   [getting started guide] https://melpa.org/#/getting-started
+;;   [getting started guide] <https://melpa.org/#/getting-started>
 
 
 ;; * How do I use it?
@@ -48,7 +51,7 @@
 
 ;; * Contributing
 
-;;   Please open GitHub issues and issue pull requests. Prior to submitting
+;;   Please open GitLab issues and issue pull requests. Prior to submitting
 ;;   a pull-request, please run `make'. This will perform some linting and
 ;;   attempt to compile the package.
 
@@ -102,16 +105,16 @@ The buffer with name BUFFER will be used or created."
   (sql-product-interactive 'sqlline buffer))
 
 (sql-add-product 'sqlline "SQLLine"
-                 :free-software t
-                 :list-all "!tables"
-                 :list-table "!describe %s;"
-                 :prompt-regexp "^[^>]*> "
-                 :prompt-cont-regexp "^(semicolon|quote|dquote)> "
-                 :sqli-comint-func 'sql-sqlline-comint
-                 :font-lock 'sql-mode-ansi-font-lock-keywords
-                 :sqli-login sql-sqlline-login-params
-                 :sqli-program 'sql-sqlline-program
-                 :sqli-options 'sql-sqlline-options)
+		 '(:free-software t
+		 :list-all "!tables"
+		 :list-table "!describe %s;"
+		 :prompt-regexp "^[^>]*> "
+		 :prompt-cont-regexp "^(semicolon|quote|dquote)> "
+		 :sqli-comint-func 'sql-sqlline-comint
+		 :font-lock 'sql-mode-ansi-font-lock-keywords
+		 :sqli-login sql-sqlline-login-params
+		 :sqli-program 'sql-sqlline-program
+		 :sqli-options 'sql-sqlline-options))
 
 (provide 'sql-sqlline)
 ;;; sql-sqlline.el ends here
