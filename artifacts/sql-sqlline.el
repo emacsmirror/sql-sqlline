@@ -3,10 +3,10 @@
 ;; Copyright (C) since 2019 Matteo Redaelli
 ;; Author: Matteo Redaelli <matteo.redaelli@gmail.com>
 
-;; Version: 1.0.1
+;; Version: 1.0.2
 ;; Keywords: languages
 ;; Package-Requires: ((emacs "24.4"))
-;; Homepage: https://gitlab.com/matteo.redaelli/sql-sqlline
+;; Homepage: https://gitlab.com/matteoredaelli/sql-sqlline
 
 ;; This file is not part of GNU Emacs.
 
