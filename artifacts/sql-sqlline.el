@@ -106,16 +106,26 @@ The buffer with name BUFFER will be used or created."
   (sql-product-interactive 'sqlline buffer))
 
 (sql-add-product 'sqlline "SQLLine"
-		 '(:free-software t
-		 :list-all "!tables"
-		 :list-table "!describe %s;"
-		 :prompt-regexp "^[^>]*> "
-		 :prompt-cont-regexp "^(semicolon|quote|dquote)> "
-		 :sqli-comint-func 'sql-sqlline-comint
-		 :font-lock 'sql-mode-ansi-font-lock-keywords
-		 :sqli-login sql-sqlline-login-params
-		 :sqli-program 'sql-sqlline-program
-		 :sqli-options 'sql-sqlline-options))
+		 '(:free-software t))
+
+(sql-set-product-feature 'sqlline
+			 :list-all "!tables")
+(sql-set-product-feature 'sqlline
+			 :list-table "!describe %s;")
+(sql-set-product-feature 'sqlline
+			 :prompt-regexp "^[^>]*> ")
+(sql-set-product-feature 'sqlline
+			 :prompt-cont-regexp "^(semicolon|quote|dquote)> ")
+(sql-set-product-feature 'sqlline
+			 :sqli-comint-func 'sql-sqlline-comint)
+(sql-set-product-feature 'sqlline
+			 :font-lock 'sql-mode-ansi-font-lock-keywords)
+(sql-set-product-feature 'sqlline
+			 :sqli-login sql-sqlline-login-params)
+(sql-set-product-feature 'sqlline
+			 :sqli-program 'sql-sqlline-program)
+(sql-set-product-feature 'sqlline
+			 :sqli-options 'sql-sqlline-options)
 
 (provide 'sql-sqlline)
 ;;; sql-sqlline.el ends here
