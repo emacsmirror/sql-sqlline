@@ -70,8 +70,8 @@ The buffer with name BUFFER will be used or created."
 			 :prompt-regexp "^[^>]*> ")
 (sql-set-product-feature 'sqlline
 			 :prompt-cont-regexp "^(semicolon|quote|dquote)> ")
-(sql-set-product-feature 'sqlline
-			 :sqli-comint-func 'sql-sqlline-comint)
+;;(sql-set-product-feature 'sqlline
+;;			 :sqli-comint-func 'sql-sqlline-comint)
 (sql-set-product-feature 'sqlline
 			 :font-lock 'sql-mode-ansi-font-lock-keywords)
 (sql-set-product-feature 'sqlline
