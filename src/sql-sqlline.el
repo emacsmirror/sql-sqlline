@@ -5,7 +5,7 @@
 
 ;; Version: 1.0.2
 ;; Keywords: languages
-;; Package-Requires: ((emacs "24.4"))
+;; Package-Requires: ((emacs "27.1"))
 ;; Homepage: https://gitlab.com/matteoredaelli/sql-sqlline
 
 ;; This file is not part of GNU Emacs.

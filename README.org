@@ -7,7 +7,7 @@
 
 Emacs comes with a SQL interpreter which is able to open a connection to databases and present you with a prompt you are probably familiar with (e.g. =mysql>=, =pgsql>=, etc.). But it cannot connect to less known databases like Amazon Athena, Amazon Redshift, (Facebook) PrestoDB,...
 
-This mode gives you the ability to do that through SqlLine (https://github.com/julianhyde/sqlline) command
+This mode gives you the ability to do that through the SqlLine (https://github.com/julianhyde/sqlline) command.
 
 * How do I get it?
 
